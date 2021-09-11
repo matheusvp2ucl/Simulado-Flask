@@ -16,7 +16,7 @@
             <div class="col-md-12 text-center">
                 <h1>Quantidade Produtos</h1>
                 <br>
-                <span>{{ dados['total'] }}</span>
+                <h3>{{ total }}</h3>
             </div>
         </div>
 
@@ -36,14 +36,16 @@
                       </tr>
                     </thead>
                     <tbody>
+                    {% for itens in produtos %}
                       <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Mark</td>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
+                        <th scope="row">{{ itens['id'] }}</th>
+                        <td><img src="{{itens['imagem']}}" alt=""></td>
+                        <td>{{itens['marca']}}</td>
+                        <td>{{itens['nome']}}</td>
+                        <td>{{itens['preco']}}</td>
+                        <td><a href="{{itens['link']}}">LINK</a></td>
                       </tr>
+                    {% endfor %}
                     </tbody>
                   </table>
             </div>
